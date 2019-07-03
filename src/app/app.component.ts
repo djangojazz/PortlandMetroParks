@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FirebaseApp } from '@angular/fire';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PortlandMetroParks';
+  items: Observable<any[]>;
+
+  constructor(public app: FirebaseApp) {
+    
+  }
 }
