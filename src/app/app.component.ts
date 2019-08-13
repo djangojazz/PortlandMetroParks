@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.db.collection('parks').valueChanges().subscribe(console.log);
+    this.db.collection('/parks').valueChanges().subscribe(console.log);
     //this.parksService.getParks().subscribe(x => this.parks = x);
   }
 }
