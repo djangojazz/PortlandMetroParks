@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    {{ title }}!
-  </h1>
+  <mat-toolbar id="header" color="primary">
+      <h1 id="headerTitle">{{title}}</h1>
+  </mat-toolbar>
   <div *ngFor="let p of parks">
     {{p.parkName}} {{p.address}} {{p.city}} {{p.zip}}
   </div>
