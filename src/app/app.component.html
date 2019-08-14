@@ -3,9 +3,9 @@
   <h1>
     {{ title }}!
   </h1>
-  <!-- <div *ngFor="let park of parks">
-    {{parkName}}
-  </div> -->
+  <div *ngFor="let p of parks">
+    {{p.parkName}} {{p.address}} {{p.city}} {{p.zip}}
+  </div>
 </div>
 
 <router-outlet></router-outlet>

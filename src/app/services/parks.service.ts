@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-//import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { Park } from '../models/park/park';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParksService {
+  public parks: Observable<Park[]>;
 
-constructor() { }
-  getParks() {
-    //return this.firestore.collection("parks").snapshotChanges();
-  }
+constructor(private db: AngularFirestore) { }
+
+  getParks = (): Observable<Park[]> => <Observable<Park[]>>this.db.collection('/parks').valueChanges();
 }

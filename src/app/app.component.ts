@@ -12,13 +12,12 @@ import { Park } from './models/park/park';
 })
 export class AppComponent implements OnInit{
   title = 'PortlandMetroParks';
-  public parks: Observable<any[]>;
+  parks: Park[];
 
-  constructor(public db: AngularFirestore, private parksService: ParksService)  {
+  constructor(private parksService: ParksService)  {
   }
 
   ngOnInit() {
-    this.db.collection('/parks').valueChanges().subscribe(console.log);
-    //this.parksService.getParks().subscribe(x => this.parks = x);
+    this.parksService.getParks().subscribe(x => this.parks = x);
   }
 }
